@@ -32,10 +32,10 @@ from FallenMusic import BOT_NAME, StartTime, app
 from FallenMusic.Helpers import get_readable_time
 
 
-@app.on_message(filters.command("ping") | filters.command(["بنج","البنج"],prefixes= ["/", "!","","#"]))
+@app.on_message(filters.command("ping") | filters.command(["ب","البنك"],prefixes= ["/", "!","","#"]))
 async def ping_fallen(_, message: Message):
     hmm = await message.reply_photo(
-        photo=config.PING_IMG, caption=f"{BOT_NAME} ⚡"
+        photo=config.PING_IMG, caption=f"{BOT_NAME} انتظر من فضلك..."
     )
     upt = int(time.time() - StartTime)
     cpu = psutil.cpu_percent(interval=0.5)
@@ -46,21 +46,21 @@ async def ping_fallen(_, message: Message):
     uptime = get_readable_time((upt))
 
     await hmm.edit_text(
-        f"""⎊ آلبنج : `{resp}ᴍs`
+        f"""⌔︙ البنك : `{resp}ᴍs`
 
-<b><u>{BOT_NAME} آلحآله :</u></b>
+<b><u>{BOT_NAME} الحاله :</u></b>
 
-⎊ **مدة التشغيل :** {uptime}
-⎊ **الرام :** {mem}
-⎊ **وحدة المعالجة المركزية :** {cpu}
-⎊ **القرص :** {disk}""",
+⌔︙ **مدة التشغيل :** {uptime}
+⌔︙ **الرام :** {mem}
+⌔︙ **وحدة المعالجة المركزية :** {cpu}
+⌔︙ **القرص :** {disk}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton("الدعم", url=config.SUPPORT_CHAT),
                     InlineKeyboardButton(
-                        "السوࢪس",
-                        url="https://t.me/EE_20",
+                        "• 𝗖𝗔𝗟𝗜𝗣𝗛 ›",
+                        url="https://t.me/aaaalqp",
                     ),
                 ],
             ]
